@@ -9,11 +9,11 @@ import db as db
 @app.route('/')
 def index():
     
-    return render_template('index.html')
+    return None
 
-@app.route('/adduser',methods = ['POST'])
+@app.route('/adduser',methods = ['GET','POST'])
 def add_user():
-    request_data = request.get_json()
+    request_data = request.json
     email = request_data["email"]
     firstname = request_data["firstname"]
     lastname = request_data["lastname"]
@@ -29,12 +29,14 @@ def get_all_users():
         #for detail in details:
          #   var = detail
         #return render_template('index.html',var=details)
-        return jsonify(details)
+        return details
 @app.route('/user/<email>', methods=['GET'])
 def get_user(email):
+    print("hello im working")
     user_details=db.get_user(email)
-    #return render_template('index.html',var=user_details)
-    return jsonify(user_details)
+    if user_details == None:
+        return "User not found"
+    return user_details
 
 @app.route('/user/<email>', methods=['PUT'])
 def update_user(email):
