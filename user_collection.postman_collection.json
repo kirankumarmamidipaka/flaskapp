@@ -1,0 +1,143 @@
+{
+	"info": {
+		"_postman_id": "3263c63c-ccb7-44db-bfff-0b91955bc297",
+		"name": "user_collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "get_all_users",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5000/users",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get_user",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5000/user/kiran123456@gmail.com",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"user",
+						"kiran123456@gmail.com"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add_user",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"email\": \"kiran123456@gmail.com\", \r\n  \"firstname\": \"kirankumar\", \r\n  \"lastname\": \"mamidipaka\", \r\n  \"password\": \"pwdddd1234\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/adduser",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"adduser"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update_user",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"email\": \"kiran123456@gmail.com\", \r\n  \"firstname\": \"kirankumar\", \r\n  \"lastname\": \"m\", \r\n  \"password\": \"1234\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/user/kiran123456@gmail.com",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"user",
+						"kiran123456@gmail.com"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete_user",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5000/user/kiran123456@gmail.com",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"user",
+						"kiran123456@gmail.com"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
